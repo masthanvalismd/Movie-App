@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import HomeIcon from "@mui/icons-material/Home";
 import MovieIcon from "@mui/icons-material/Movie";
 
+
 function NotFoundPage() {
   const navigate = useNavigate();
 
