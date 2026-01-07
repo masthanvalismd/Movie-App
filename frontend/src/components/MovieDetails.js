@@ -12,7 +12,6 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import StarIcon from "@mui/icons-material/Star";
 import EditIcon from "@mui/icons-material/Edit";
-
 import { MovieDetailsSkeleton } from "./Skeletons";
 import { useMovie } from "../hooks/useMovies";
 import { useApp } from "../context/AppContext";
