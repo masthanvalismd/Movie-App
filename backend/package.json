@@ -1,5 +1,5 @@
 {
-  "name": "movies-api",
+  "name": "movies-api-1",
   "version": "1.0.0",
   "description": "Minimal Express backend for Movies App",
   "main": "server.js",
