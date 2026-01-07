@@ -7,7 +7,6 @@ import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import MovieIcon from "@mui/icons-material/Movie";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
-
 import { Movie } from "./Movie";
 import { useApp } from "../context/AppContext";
 
