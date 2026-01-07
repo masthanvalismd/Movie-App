@@ -15,7 +15,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import SortIcon from "@mui/icons-material/Sort";
 import RefreshIcon from "@mui/icons-material/Refresh";
-
 import { Movie } from "./Movie";
 import { MovieGridSkeleton } from "./Skeletons";
 import { useMovies, useDebounce } from "../hooks/useMovies";
