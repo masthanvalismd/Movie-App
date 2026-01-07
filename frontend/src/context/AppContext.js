@@ -6,7 +6,7 @@ import {
   useCallback,
   useMemo,
 } from "react";
-
+// Context to manage global app state: theme, watchlist, recently viewed
 const AppContext = createContext(null);
 
 const STORAGE_KEYS = {
