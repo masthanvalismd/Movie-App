@@ -19,7 +19,6 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import CategoryIcon from "@mui/icons-material/Category";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PeopleIcon from "@mui/icons-material/People";
-
 import { movieValidationSchema } from "./AddMovie";
 import { useMovie } from "../hooks/useMovies";
 import { movieApi } from "../services/movieApi";

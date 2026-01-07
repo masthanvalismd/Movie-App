@@ -20,7 +20,6 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import CategoryIcon from "@mui/icons-material/Category";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PeopleIcon from "@mui/icons-material/People";
-
 import { movieApi } from "../services/movieApi";
 
 export const movieValidationSchema = yup.object({
