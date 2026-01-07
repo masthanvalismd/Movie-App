@@ -16,7 +16,6 @@ import HomeIcon from "@mui/icons-material/Home";
 import MovieIcon from "@mui/icons-material/Movie";
 import AddIcon from "@mui/icons-material/Add";
 import CircularProgress from "@mui/material/CircularProgress";
-
 import { AppProvider, useApp } from "./context/AppContext";
 
 // Lazy loaded routes for code splitting
