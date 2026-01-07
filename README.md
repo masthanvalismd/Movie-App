@@ -1,70 +1,198 @@
-# Getting Started with Create React App
+#  MovieFlix - MERN Movies App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, Netflix-style movie browsing application built with the MERN stack (MongoDB replaced with JSON file for simplicity). Features a sleek dark/light theme, watchlist functionality, and responsive design.
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react)
+![Express](https://img.shields.io/badge/Express-4.18.2-000000?logo=express)
+![MUI](https://img.shields.io/badge/MUI-5.14.17-007FFF?logo=mui)
+![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js)
 
-In the project directory, you can run:
+##  Features
 
-### `npm start`
+-  **Netflix-style UI** - Modern, responsive design with hero sections and horizontal scrolling
+-  **Advanced Search & Filters** - Search by name, filter by genre and rating, sort options
+-  **Dark/Light Theme** - Toggle between themes with persistent preference
+-  **Watchlist** - Save movies to watch later (persisted in localStorage)
+-  **Recently Viewed** - Track your viewing history
+-  **Lazy Loading** - Code splitting for optimal performance
+-  **Skeleton Loaders** - Smooth loading states
+-  **Fully Responsive** - Works on mobile, tablet, and desktop
+-  **CRUD Operations** - Add, edit, delete movies
+-  **Cast Information** - View cast and crew details
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##  Tech Stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Frontend
+- **React 18** - UI library with hooks
+- **React Router v6** - Client-side routing
+- **Material UI (MUI)** - Component library
+- **Formik + Yup** - Form handling and validation
+- **Context API** - Global state management
 
-### `npm test`
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **CORS** - Cross-origin resource sharing
+- **JSON File** - Data storage (easily replaceable with MongoDB)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##  Project Structure
 
-### `npm run build`
+```
+Movies-App/
+ backend/
+    movies.json       # Movie data storage
+    package.json
+    server.js         # Express API server
+ frontend/
+    public/
+       image.png     # Brand logo
+       index.html
+    src/
+       components/
+          AddMovie.js
+          Home.js
+          Movie.js
+          MovieDetails.js
+          MovieList.js
+          NotFound.js
+          Skeletons.js
+          UpdateDetails.js
+          Watchlist.js
+       context/
+          AppContext.js
+       hooks/
+          useMovies.js
+       services/
+          movieApi.js
+       App.js
+       App.css
+       index.js
+    package.json
+ .gitignore
+ README.md
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##  Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node.js 18+ installed
+- npm or yarn
 
-### `npm run eject`
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/Movies-App.git
+   cd Movies-App
+   ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Install Backend Dependencies**
+   ```bash
+   cd backend
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. **Install Frontend Dependencies**
+   ```bash
+   cd ../frontend
+   npm install
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Running the App
 
-## Learn More
+1. **Start the Backend Server** (Terminal 1)
+   ```bash
+   cd backend
+   npm start
+   ```
+   Server runs at http://localhost:5000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. **Start the Frontend** (Terminal 2)
+   ```bash
+   cd frontend
+   npm start
+   ```
+   App opens at http://localhost:3000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##  API Endpoints
 
-### Code Splitting
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | /movies | Get all movies |
+| GET | /movies/:id | Get movie by ID |
+| POST | /movies | Create new movie |
+| PUT | /movies/:id | Update movie |
+| DELETE | /movies/:id | Delete movie |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Movie Schema
 
-### Analyzing the Bundle Size
+```json
+{
+  "id": "1767706551001",
+  "name": "Movie Name",
+  "poster": "https://...",
+  "rating": 8.5,
+  "summary": "Movie description...",
+  "trailer": "https://youtube.com/embed/...",
+  "year": 2024,
+  "genre": "Action, Drama",
+  "duration": "2h 30m",
+  "cast": [
+    {
+      "name": "Actor Name",
+      "role": "Character",
+      "avatar": "https://..."
+    }
+  ]
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+##  Configuration
 
-### Making a Progressive Web App
+### Environment Variables (Optional)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Create .env file in frontend folder:
+```
+REACT_APP_API_URL=http://localhost:5000
+```
 
-### Advanced Configuration
+### Switching to MongoDB
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Replace the JSON file storage in backend/server.js with MongoDB:
 
-### Deployment
+```javascript
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/moviesdb');
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+##  Available Scripts
 
-### `npm run build` fails to minify
+### Frontend
+- npm start - Run development server
+- npm build - Build for production
+- npm test - Run tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Backend
+- npm start - Start Express server
+- npm run dev - Start with auto-reload (nodemon)
+
+##  Contributing
+
+1. Fork the repository
+2. Create your feature branch (git checkout -b feature/AmazingFeature)
+3. Commit your changes (git commit -m 'Add some AmazingFeature')
+4. Push to the branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
+
+##  License
+
+This project is open source and available under the MIT License.
+
+##  Author
+
+**Mohammed Masthan Vali**
+
+---
+
+ Star this repo if you found it helpful!
