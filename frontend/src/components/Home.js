@@ -15,6 +15,7 @@ import { HeroSkeleton, MovieCardSkeleton } from "./Skeletons";
 import { useMovies } from "../hooks/useMovies";
 import { useApp } from "../context/AppContext";
 
+// Component to render a row of movies with a title and optional icon
 function MovieRow({ title, movies, icon: Icon }) {
   const navigate = useNavigate();
 
