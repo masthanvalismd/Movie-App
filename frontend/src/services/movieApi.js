@@ -1,5 +1,6 @@
 // Local Express backend
-const API_BASE_URL = "http://localhost:5000/movies";
+// const API_BASE_URL = "http://localhost:5000/movies";
+const API_BASE_URL = "https://movie-app-pqzm.onrender.com/movies";
 
 // Helper to parse cast (handles both array and JSON string)
 export const parseCast = (castData) => {

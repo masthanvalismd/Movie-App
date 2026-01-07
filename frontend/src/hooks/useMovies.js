@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { movieApi } from "../services/movieApi";
 
+// Hook to manage list of movies
 export function useMovies() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
