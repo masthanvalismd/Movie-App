@@ -8,12 +8,15 @@ export function useMovies() {
   const [error, setError] = useState(null);
 
   const fetchMovies = useCallback(async () => {
+    // console.log("[useMovies] Fetching movies...");
     try {
       setLoading(true);
       setError(null);
       const data = await movieApi.getAll();
+      // console.log(`[useMovies] Loaded ${data.length} movies successfully`);
       setMovies(data);
     } catch (err) {
+      console.error("[useMovies] fetchMovies failed:", err.message);
       setError(err.message);
     } finally {
       setLoading(false);
@@ -25,11 +28,13 @@ export function useMovies() {
   }, [fetchMovies]);
 
   const deleteMovie = useCallback(async (id) => {
+    // console.log(`[useMovies] Deleting movie with id: ${id}`);
     try {
       await movieApi.delete(id);
       setMovies((prev) => prev.filter((m) => m.id !== id));
+      // console.log(`[useMovies] Movie deleted successfully: ${id}`);
     } catch (err) {
-      console.error("Delete failed:", err);
+      console.error(`[useMovies] deleteMovie(${id}) failed:`, err.message);
       throw err;
     }
   }, []);
@@ -46,12 +51,15 @@ export function useMovie(id) {
     if (!id) return;
 
     const fetchMovie = async () => {
+      // console.log(`[useMovie] Fetching movie with id: ${id}`);
       try {
         setLoading(true);
         setError(null);
         const data = await movieApi.getById(id);
+        // console.log(`[useMovie] Loaded movie: ${data.name}`);
         setMovie(data);
       } catch (err) {
+        console.error(`[useMovie] fetchMovie(${id}) failed:`, err.message);
         setError(err.message);
       } finally {
         setLoading(false);
