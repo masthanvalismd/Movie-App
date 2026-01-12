@@ -173,7 +173,7 @@ function AppContent() {
                   paddingLeft: 1,
                 }}
               >
-               <span style={{ color: "white" }}>MOVIE</span>FLIX
+                MOVIEFLIX
               </Typography>
             </Box>
 
