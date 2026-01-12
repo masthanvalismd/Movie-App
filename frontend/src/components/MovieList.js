@@ -62,10 +62,15 @@ export function MovieList() {
   const handleDelete = useCallback(
     async (id) => {
       if (window.confirm("Are you sure you want to delete this movie?")) {
+        // console.log(`[MovieList] User confirmed deletion of movie: ${id}`);
         try {
           await deleteMovie(id);
+          // console.log(`[MovieList] Movie deleted successfully: ${id}`);
         } catch (err) {
-          console.error("Delete failed:", err);
+          console.error(
+            `[MovieList] Delete failed for movie ${id}:`,
+            err.message
+          );
         }
       }
     },
