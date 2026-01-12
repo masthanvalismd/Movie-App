@@ -170,9 +170,10 @@ function AppContent() {
                   color: "primary.main",
                   display: { xs: "none", sm: "block" },
                   letterSpacing: "-0.5px",
+                  paddingLeft: 1,
                 }}
               >
-                MOVIEFLIX
+               <span style={{ color: "white" }}>MOVIE</span>FLIX
               </Typography>
             </Box>
 
