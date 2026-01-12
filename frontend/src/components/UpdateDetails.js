@@ -81,12 +81,22 @@ function EditMovieForm({ movie }) {
           ...formValues,
           cast: formValues.cast ? JSON.parse(formValues.cast) : [],
         };
+        // console.log(`[UpdateDetails] Updating movie: ${movie.id}`);
         await movieApi.update(movie.id, updatedMovie);
+        // console.log("[UpdateDetails] Movie updated successfully");
         navigate("/movies");
       } catch (err) {
         if (err instanceof SyntaxError) {
+          console.error(
+            "[UpdateDetails] Invalid JSON format in Cast field:",
+            err.message
+          );
           setError("Invalid JSON format in Cast field");
         } else {
+          console.error(
+            `[UpdateDetails] Failed to update movie ${movie.id}:`,
+            err.message
+          );
           setError(err.message || "Failed to update movie");
         }
         setSubmitting(false);

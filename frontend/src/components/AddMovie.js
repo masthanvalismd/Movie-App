@@ -112,12 +112,19 @@ export function AddMovie() {
           ...formValues,
           cast: formValues.cast ? JSON.parse(formValues.cast) : [],
         };
+        // console.log("[AddMovie] Creating new movie:", newMovie.name);
         await movieApi.create(newMovie);
+        // console.log("[AddMovie] Movie created successfully");
         navigate("/movies");
       } catch (err) {
         if (err instanceof SyntaxError) {
+          console.error(
+            "[AddMovie] Invalid JSON format in Cast field:",
+            err.message
+          );
           setError("Invalid JSON format in Cast field");
         } else {
+          console.error("[AddMovie] Failed to create movie:", err.message);
           setError(err.message || "Failed to add movie");
         }
         setSubmitting(false);
