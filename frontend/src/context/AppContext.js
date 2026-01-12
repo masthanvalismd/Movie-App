@@ -19,7 +19,11 @@ function getStoredData(key, defaultValue) {
   try {
     const stored = localStorage.getItem(key);
     return stored ? JSON.parse(stored) : defaultValue;
-  } catch {
+  } catch (error) {
+    console.error(
+      `[AppContext] Failed to read from localStorage (${key}):`,
+      error.message
+    );
     return defaultValue;
   }
 }
