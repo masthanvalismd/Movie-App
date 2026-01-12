@@ -9,7 +9,6 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import StarIcon from "@mui/icons-material/Star";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import HistoryIcon from "@mui/icons-material/History";
-
 import { Movie } from "./Movie";
 import { HeroSkeleton, MovieCardSkeleton } from "./Skeletons";
 import { useMovies } from "../hooks/useMovies";
