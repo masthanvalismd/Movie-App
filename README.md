@@ -2,6 +2,8 @@
 
 A modern, Netflix-style movie browsing application built with the MERN stack (MongoDB replaced with JSON file for simplicity). Features a sleek dark/light theme, watchlist functionality, and responsive design.
 
+Frontend deployed on Vercel, backend APIs hosted on Render using file-based JSON storage for demo purposes.
+
 ![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react)
 ![Express](https://img.shields.io/badge/Express-4.18.2-000000?logo=express)
 ![MUI](https://img.shields.io/badge/MUI-5.14.17-007FFF?logo=mui)
